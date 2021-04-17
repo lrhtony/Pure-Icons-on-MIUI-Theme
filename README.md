@@ -7,7 +7,7 @@
 另外，如果遇到了动态库缺失的情况，请尝试安装vc运行库
 
 ## 打包
-由于包文件shutil的copytree不能复制到已存在的文件夹中，因此作了一定的修改，如图所示![shutil的修改](https://cdn.jsdelivr.net/gh/lrhtony/Pure-Icons-on-MIUI-Theme@master/README.md)
+由于包文件shutil的copytree不能复制到已存在的文件夹中，因此作了一定的修改，如图所示![shutil的修改](https://cdn.jsdelivr.net/gh/lrhtony/Pure-Icons-on-MIUI-Theme@master/img/shutil.jpg)
 
 参考：https://www.cnblogs.com/fply/p/8365392.html
 

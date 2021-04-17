@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- calendar -->
+
+<Icon extraResources="sw720-den320::0.7407,sw1080-den440::0.9259,sw1440-den640::1.2346" extraScales="sw720-den320:0.7473,sw1080-den440:0.9231,sw1440-den640:1.2307" frameRate="0" height="182" resDensity="480" useVariableUpdater="DateTime.Second" version="1" width="182">
+  <VariableBinders>
+    <BroadcastBinder action="android.intent.action.TIME_SET"/>
+    <BroadcastBinder action="android.intent.action.DATE_CHANGED"/>
+  </VariableBinders>
+  <Image align="center" alignV="center" src="calendar_icon.png" srcid="#date" x="91" y="91"/>
+</Icon>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<Icon extraResources="sw720-den320::0.7407,sw1080-den440::0.9259,sw1440-den640::1.2346" extraScales="sw720-den320:0.7473,sw1080-den440:0.9231,sw1440-den640:1.2307" frameRate="1" height="182" resDensity="480" useVariableUpdater="DateTime.Minute" version="1" width="182">
+  <Image align="center" alignV="center" src="clock_bg.png" x="91" y="91"/>
+  <Image align="center" alignV="center" angle="#minute*6" antiAlias="true" centerX="91" centerY="91" src="clock_minute.png" x="91" y="91"/>
+  <Image align="center" alignV="center" angle="#hour12*30+#minute/2" antiAlias="true" centerX="91" centerY="91" src="clock_hour.png" x="91" y="91"/>
+  <Image align="center" alignV="center" angle="#second*6" antiAlias="true" centerX="91" centerY="91" src="clock_second.png" x="91" y="91"/>
+</Icon>

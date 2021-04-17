@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- weather -->
+
+<Icon extraResources="sw720-den320::0.7407,sw1080-den440::0.9259,sw1440-den640::1.2346" extraScales="sw720-den320:0.7473,sw1080-den440:0.9231,sw1440-den640:1.2307" frameRate="0" height="182" resDensity="480" useVariableUpdater="none" version="1" width="182">
+  <VariableBinders>
+    <ContentProviderBinder columns="city_name,temperature,temperature_range,description,weather_type" countName="hasweather" uri="content://weather/weather">
+      <Variable column="weather_type" name="weather_id" type="int"/>
+      <Variable column="city_name" name="weather_location" type="string"/>
+      <Variable column="temperature" name="weather_temperature" type="int"/>
+      <Variable column="temperature" name="weather_temperature_str" type="string"/>
+      <Variable column="temperature_range" name="weather_temperature_range" type="string"/>
+      <Variable column="description" name="weather_description" type="string"/>
+    </ContentProviderBinder>
+  </VariableBinders>
+  <Group>
+    <!--weather.bg-->
+
+    <Var expression="ge(#weather_id,4)*le(#weather_id,11)" name="is_rain"/>
+    <Var expression="ge(#weather_id,12)*le(#weather_id,17)" name="is_snow"/>
+    <Var expression="ge(#weather_id,18)*le(#weather_id,21)+eq(#weather_id,23)" name="is_dust"/>
+    <Var expression="ifelse(isnull(#weather_id),1,gt(#weather_id,24),1,#weather_id)" name="icon_suffix"/>
+    <Var expression="ifelse(#is_rain,4,#is_snow,12,#is_dust,18,#icon_suffix)" name="icon_index"/>
+    <Image align="center" alignV="center" srcExp="&apos;weather_&apos;+ #icon_index + &apos;.png&apos;" x="91" y="91"/>
+    <!--temperature-->
+
+    <Var expression="#hasweather*not(isnull(@weather_temperature_str)+eqs(@weather_temperature_str,&apos;&apos;))" name="temperature_not_null"/>
+    <ImageNumber alignV="center" name="temp" number="#weather_temperature" src="temp.png" visibility="#temperature_not_null" x="91-lt(#weather_temperature,0)*3.5-#temp.bmp_width/2" y="60"/>
+    <Image alignV="center" name="degree" src="degree.png" visibility="#temperature_not_null" x="91-lt(#weather_temperature,0)*3.5+#temp.bmp_width/2" y="60"/>
+  </Group>
+</Icon>
